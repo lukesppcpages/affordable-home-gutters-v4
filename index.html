@@ -61,17 +61,23 @@
     margin-top:18px;
     font-size:clamp(1.15rem, 2.6vw, 1.4rem);
     font-weight:700;
+    color:var(--red);
   }
-  .hero-sub .green{color:var(--green);}
-  .hero-sub .red{color:var(--red);}
-  .hero-bullets{list-style:none; margin:28px 0 0; padding:0;}
+  .hero-bullets{
+    list-style:none; margin:28px 0 0; padding:0;
+    display:grid; grid-template-columns:1fr; gap:14px;
+  }
   .hero-bullets li{
     display:flex; align-items:center; gap:14px;
-    padding:14px 0;
-    border-bottom:1px solid var(--grey);
+    padding:14px;
+    border:1px solid var(--grey);
+    border-radius:var(--radius-sm);
+    background:var(--white);
     font-size:1.05rem; font-weight:600; color:var(--ink);
   }
-  .hero-bullets li:first-child{padding-top:0;}
+  @media (min-width:480px){
+    .hero-bullets{grid-template-columns:1fr 1fr;}
+  }
   .bullet-check{
     flex:none; width:26px; height:26px; border-radius:50%;
     background:var(--green); color:var(--white);
@@ -150,7 +156,7 @@
           <span class="label">Trusted by 500,000+ Homeowners Nationwide</span>
         </div>
         <h1>SAVE THOUSANDS ON GUTTER PROTECTION</h1>
-        <p class="hero-sub"><span class="green">Get 75% Off Installation</span> <span class="red">+ An Extra $200 Off Today!</span></p>
+        <p class="hero-sub">75% Off Installation + Extra $200 Off Today!</p>
 
         <ul class="hero-bullets">
           <li><span class="bullet-check"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8.5 6.5,12 13,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Clog-Free Guarantee*</li>
