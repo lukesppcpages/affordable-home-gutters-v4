@@ -43,6 +43,8 @@
   .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
 
   /* ============ HEADER ============ */
+  .offer-banner{background:#1AB277; text-align:center; padding:12px 20px;}
+  .offer-banner p{color:var(--white); font-weight:800; font-size:clamp(0.85rem, 2.4vw, 1.02rem); letter-spacing:0.01em;}
   .site-header{background:var(--white); padding:20px 0; text-align:center; border-bottom:1px solid var(--grey);}
   .site-logo{height:34px; width:auto; display:inline-block;}
 
@@ -56,7 +58,7 @@
     margin-top:18px;
     font-size:clamp(23px, calc(9.09vw - 6.1px), 2.9rem);
     line-height:1.12;
-    color:var(--ink);
+    color:#172A3A;
   }
   .hero-sub{
     margin-top:18px;
@@ -81,7 +83,7 @@
   }
   .bullet-check{
     flex:none; width:26px; height:26px; border-radius:50%;
-    background:var(--green); color:var(--white);
+    background:#1AB277; color:var(--white);
     display:flex; align-items:center; justify-content:center;
   }
   .hero-image{margin-top:32px; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card);}
@@ -100,7 +102,7 @@
     line-height:1.3;
     max-width:360px;
     margin:0 auto 24px;
-    color:var(--ink);
+    color:#172A3A;
   }
   .field-row{display:flex; flex-direction:column; gap:14px; margin-bottom:14px;}
   .field{flex:1;}
@@ -146,6 +148,10 @@
 </head>
 <body>
 
+<div class="offer-banner">
+  <p>Exclusive Leafguard Offer: 75% Off Installation + Save An Extra $200 Today</p>
+</div>
+
 <header class="site-header">
   <img src="img/logo-green.svg" alt="Affordable Home" class="site-logo" />
 </header>
@@ -175,7 +181,7 @@
 
       <div class="hero-form-col">
         <div class="form-card">
-          <h2>Get your free, no-obligation quote today!</h2>
+          <h2>Get Your Free, No-Obligation Quote Today!</h2>
           <form id="quoteForm" novalidate>
             <div class="field-row two-col">
               <div class="field">
