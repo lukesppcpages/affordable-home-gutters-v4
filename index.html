@@ -63,10 +63,10 @@
   }
   .hero-sub{
     margin-top:18px;
-    font-size:clamp(12px, calc(3.636vw + 0.36px), 1.4rem);
+    font-size:clamp(1.05rem, 5vw, 1.4rem);
+    line-height:1.35;
     font-weight:700;
     color:var(--red);
-    white-space:nowrap;
   }
   .hero-bullets{
     list-style:none; margin:28px 0 0; padding:0;
@@ -75,7 +75,7 @@
   .hero-bullets li{
     display:flex; align-items:center; gap:14px;
     padding:8px 14px;
-    border:1px solid var(--grey);
+    border:none;
     border-radius:var(--radius-sm);
     background:transparent;
     font-size:1.05rem; font-weight:600; color:var(--ink);
@@ -137,11 +137,12 @@
     .hero{padding:56px 0 64px;}
     .hero-copy{text-align:left;}
     .rating-row{justify-content:flex-start;}
+    .sub-break{display:none;}
     .hero-grid{grid-template-columns:1.15fr 1fr; gap:56px;}
     .form-card{position:sticky; top:32px; padding:40px 34px;}
     .hero h1{font-size:clamp(37px, calc(4.273vw - 4.02px), 2.9rem);}
     .hero-bullets{gap:14px;}
-    .hero-bullets li{padding:14px; background:var(--white);}
+    .hero-bullets li{padding:14px; background:var(--white); border:1px solid var(--grey);}
   }
 
   /* ============ FOOTER ============ */
@@ -172,7 +173,7 @@
           <span class="label">500,000+ Happy Customers</span>
         </div>
         <h1>SAVE THOUSANDS ON LEAFGUARD GUTTERS</h1>
-        <p class="hero-sub">75% Off Installation + Extra $200 Off Today!</p>
+        <p class="hero-sub">75% Off Installation <br class="sub-break">+ Extra $200 Off Today!</p>
 
         <ul class="hero-bullets">
           <li><span class="bullet-check"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><polyline points="3,8.5 6.5,12 13,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Clog-Free Guarantee*</li>
