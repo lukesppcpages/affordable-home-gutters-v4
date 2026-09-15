@@ -44,7 +44,11 @@
 
   /* ============ HEADER ============ */
   .offer-banner{background:#172A3A; text-align:center; padding:12px 20px;}
-  .offer-banner p{color:var(--white); font-weight:800; font-size:clamp(0.85rem, 2.4vw, 1.02rem); letter-spacing:0.01em;}
+  .offer-banner p{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    color:var(--white); font-weight:800; font-size:clamp(0.85rem, 2.4vw, 1.02rem); letter-spacing:0.01em;
+  }
+  .offer-banner svg{flex:none;}
   .site-header{background:var(--white); padding:20px 0; text-align:center; border-bottom:1px solid var(--grey);}
   .site-logo{height:34px; width:auto; display:inline-block;}
 
@@ -57,7 +61,7 @@
   .rating-row span.label{font-weight:700; font-size:0.92rem; color:var(--ink);}
   .hero h1{
     margin-top:18px;
-    font-size:clamp(23px, calc(9.09vw - 6.1px), 2.9rem);
+    font-size:clamp(21px, calc(8.5vw - 5.7px), 48px);
     line-height:1.12;
     color:#172A3A;
   }
@@ -68,6 +72,7 @@
     font-weight:700;
     color:var(--red);
   }
+  .sub-desktop{display:none;}
   .hero-bullets{
     list-style:none; margin:28px 0 0; padding:0;
     display:grid; grid-template-columns:1fr; gap:6px;
@@ -107,7 +112,8 @@
     color:#172A3A;
   }
   .field-row{display:flex; flex-direction:column; gap:14px; margin-bottom:14px;}
-  .field{flex:1;}
+  .field-row.two-col.name-row{flex-direction:row;}
+  .field{flex:1; min-width:0;}
   .field label{display:block; font-size:0.82rem; font-weight:700; color:var(--ink); margin-bottom:6px;}
   .field-input{
     width:100%; padding:14px 16px; border:1.5px solid var(--grey); border-radius:var(--radius-sm);
@@ -138,7 +144,9 @@
     .hero-copy{text-align:left;}
     .rating-row{justify-content:flex-start;}
     .sub-break{display:none;}
-    .hero-sub{white-space:nowrap;}
+    .sub-mobile{display:none;}
+    .sub-desktop{display:inline;}
+    .hero-sub{white-space:nowrap; font-size:1.6rem;}
     .hero-grid{grid-template-columns:1.15fr 1fr; gap:56px;}
     .form-card{position:sticky; top:32px; padding:40px 34px;}
     .hero h1{font-size:clamp(37px, calc(4.273vw - 4.02px), 2.9rem);}
@@ -158,11 +166,15 @@
 <body>
 
 <div class="offer-banner">
-  <p>Exclusive Leafguard Offer: 75% Off Installation + Save An Extra $200 Today</p>
+  <p>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v13" stroke="currentColor" stroke-width="1.8"/><path d="M12 8H8.5a2.25 2.25 0 0 1 0-4.5C11 3.5 12 8 12 8Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8h3.5a2.25 2.25 0 0 0 0-4.5C13 3.5 12 8 12 8Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Exclusive Leafguard Offer
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v13" stroke="currentColor" stroke-width="1.8"/><path d="M12 8H8.5a2.25 2.25 0 0 1 0-4.5C11 3.5 12 8 12 8Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8h3.5a2.25 2.25 0 0 0 0-4.5C13 3.5 12 8 12 8Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </p>
 </div>
 
 <header class="site-header">
-  <img src="img/logo-green.svg" alt="Affordable Home" class="site-logo" />
+  <img src="img/logo-black.svg" alt="Affordable Home" class="site-logo" />
 </header>
 
 <section class="hero" id="top">
@@ -174,7 +186,10 @@
           <span class="label">500,000+ Happy Customers</span>
         </div>
         <h1>SAVE THOUSANDS ON LEAFGUARD GUTTERS</h1>
-        <p class="hero-sub">Get 75% Off Installation <br class="sub-break">+ An Extra $200 Off Today!</p>
+        <p class="hero-sub">
+          <span class="sub-mobile">Get 75% Off Installation <br class="sub-break">+ An Extra $200 Off Today!</span>
+          <span class="sub-desktop">75% Off Installs + An Extra $200 Off!</span>
+        </p>
 
         <div class="hero-image">
           <img src="img/gutter-before-after.png" alt="Before and after installing gutter protection" />
@@ -192,7 +207,7 @@
         <div class="form-card">
           <h2>Get Your Free, No-Obligation Quote Today!</h2>
           <form id="quoteForm" novalidate>
-            <div class="field-row two-col">
+            <div class="field-row two-col name-row">
               <div class="field">
                 <label for="fname">First Name</label>
                 <input class="field-input" id="fname" data-field="fname" type="text" placeholder="John" autocomplete="given-name" />
